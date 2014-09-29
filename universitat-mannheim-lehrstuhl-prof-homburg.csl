@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" default-locale="de-DE" version="1.0" demote-non-dropping-particle="sort-only">
+<!-- This style was edited with the Visual CSL Editor (http://editor.citationstyles.org/visualEditor/) -->
+  <info>
+    <title>Universität Mannheim - Lehrstuhl Prof. Homburg (German)</title>
+    <id>http://www.zotero.org/styles/universitat-mannheim-lehrstuhl-prof-homburg</id>
+    <link href="http://www.zotero.org/styles/universitat-mannheim-lehrstuhl-prof-homburg" rel="self"/>
+    <link href="https://forums.zotero.org/discussion/11645/style-needed-university-of-mannheim-germany-chair-of-prof-dr-dr-hc-christian-homburg/" rel="template"/>
+    <link href="http://homburg.bwl.uni-mannheim.de/fileadmin/files/homburg/files/Students/PDFs/Formale_Richtlinien_Lehrstuhl_0314.pdf" rel="documentation"/>
+    <link href="http://homburg.bwl.uni-mannheim.de/de/students/wissenschaftliche_arbeiten/" rel="documentation"/>
+    <author>
+      <name>Philipp Zumstein</name>
+      <uri>https://github.com/zuphilip</uri>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="communications"/>
+    <category field="social_science"/>
+    <summary>Zitierstil implemeniert die Richtlinien zur formalen Gestaltung von schriftlichen Arbeiten (Stand März 2013) am Lehrstuhl von Prof. Homburg, BWL, Universität Mannheim.</summary>
+    <updated>2014-09-28T11:58:25+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale xml:lang="de-DE">
+    <terms>
+      <term name="online">URL</term>
+      <term name="anonymous" form="short">o. V.</term>
+    </terms>
+  </locale>
+  <macro name="editor">
+    <names variable="editor">
+      <label form="short" suffix=" "/>
+      <name and="text" name-as-sort-order="all"/>
+    </names>
+  </macro>
+  <macro name="series-editor">
+    <names variable="original-author">
+      <label form="short" text-case="capitalize-first" suffix=". " strip-periods="true"/>
+      <name and="text" delimiter=", "/>
+    </names>
+  </macro>
+  <macro name="author">
+    <choose>
+      <if match="any" variable="author editor">
+        <names variable="author">
+          <name name-as-sort-order="all" sort-separator=", " delimiter=", " delimiter-precedes-last="always"/>
+          <label form="short" strip-periods="true" prefix=", " suffix="."/>
+          <substitute>
+            <names variable="editor"/>
+          </substitute>
+        </names>
+      </if>
+      <else>
+        <text term="anonymous" form="short"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="author-short">
+    <choose>
+      <if match="any" variable="author editor">
+        <names variable="author">
+          <name form="short" delimiter="/" delimiter-precedes-last="always"/>
+          <substitute>
+            <names variable="editor"/>
+          </substitute>
+        </names>
+      </if>
+      <else>
+        <text term="anonymous" form="short" strip-periods="true"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="access">
+    <group delimiter=" ">
+      <text term="online" suffix=":"/>
+      <text variable="URL"/>
+      <date variable="accessed" prefix="[" suffix="]">
+        <date-part name="day" suffix="."/>
+        <date-part name="month" form="numeric" suffix="."/>
+        <date-part name="year"/>
+      </date>
+    </group>
+  </macro>
+  <macro name="title">
+    <choose>
+      <if type="thesis"/>
+      <else-if type="bill book graphic legal_case motion_picture report song" match="any">
+        <text variable="title"/>
+      </else-if>
+      <else>
+        <text variable="title" quotes="false"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="publisher">
+    <group delimiter=": ">
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+    </group>
+  </macro>
+  <macro name="year-date">
+    <choose>
+      <if variable="issued">
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+      </if>
+      <else>
+        <text term="no date" form="short"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="volume-issue-or-month">
+    <choose>
+      <if match="any" is-numeric="issue">
+        <group delimiter=", ">
+          <text variable="volume"/>
+          <text variable="issue"/>
+        </group>
+      </if>
+      <else-if match="any" variable="issue">
+        <group delimiter=" ">
+          <text variable="volume"/>
+          <text variable="issue" prefix="(" suffix=")"/>
+        </group>
+      </else-if>
+      <else>
+        <choose>
+          <if match="any" variable="volume">
+            <group delimiter=" ">
+              <text variable="volume"/>
+              <date variable="issued" prefix="(" suffix=")">
+                <date-part name="month"/>
+              </date>
+            </group>
+          </if>
+          <else>
+            <date form="text" variable="issued"/>
+          </else>
+        </choose>
+      </else>
+    </choose>
+  </macro>
+  <macro name="pages">
+    <label variable="page" form="short" suffix=". " text-case="capitalize-first" strip-periods="true"/>
+    <text variable="page"/>
+  </macro>
+  <macro name="edition">
+    <choose>
+      <if is-numeric="edition">
+        <group delimiter=" ">
+          <number variable="edition" form="ordinal"/>
+          <text term="edition" form="short" suffix="," strip-periods="true"/>
+        </group>
+      </if>
+      <else>
+        <text variable="edition" suffix="."/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="author-count">
+    <names variable="author">
+      <name form="count"/>
+    </names>
+  </macro>
+  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-names="false" disambiguate-add-givenname="false" collapse="year">
+    <layout prefix="(" suffix=")" delimiter=", ">
+      <group delimiter=", ">
+        <group delimiter=" ">
+          <text macro="author-short"/>
+          <text macro="year-date"/>
+        </group>
+        <group delimiter=" ">
+          <label variable="locator" form="short"/>
+          <text variable="locator"/>
+        </group>
+      </group>
+    </layout>
+  </citation>
+  <bibliography et-al-min="6" et-al-use-first="1">
+    <sort>
+      <key macro="author"/>
+      <key macro="author-count"/>
+      <key macro="year-date"/>
+    </sort>
+    <layout suffix=".">
+      <group delimiter=", ">
+        <group delimiter=" ">
+          <text macro="author"/>
+          <text macro="year-date" prefix="(" suffix=")"/>
+        </group>
+        <text variable="title"/>
+        <choose>
+          <if type="article-newspaper article-magazine article-journal" match="any">
+            <text macro="editor"/>
+            <text variable="container-title"/>
+            <text macro="volume-issue-or-month"/>
+            <text variable="page"/>
+          </if>
+          <else-if type="thesis">
+            <text variable="genre"/>
+            <text macro="publisher"/>
+          </else-if>
+          <else-if type="chapter paper-conference" match="any">
+            <group delimiter=": ">
+              <text term="in" text-case="lowercase"/>
+              <group delimiter=", ">
+                <names variable="container-author">
+                  <name name-as-sort-order="all"/>
+                  <label form="short" prefix=" (" suffix=")"/>
+                  <substitute>
+                    <names variable="editor"/>
+                  </substitute>
+                </names>
+                <text variable="container-title"/>
+              </group>
+            </group>
+            <text macro="edition"/>
+            <text variable="publisher-place"/>
+            <text variable="page"/>
+          </else-if>
+          <else-if type="webpage" match="any">
+            <text macro="access" prefix=" "/>
+          </else-if>
+          <else>
+            <text macro="editor"/>
+            <text macro="edition"/>
+            <text variable="publisher-place"/>
+          </else>
+        </choose>
+      </group>
+    </layout>
+  </bibliography>
+</style>
