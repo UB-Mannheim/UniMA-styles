@@ -146,7 +146,7 @@
     <sort>
       <key macro="year-date"/>
     </sort>
-    <layout delimiter="; ">
+    <layout delimiter="; " suffix=".">
       <group delimiter=", ">
         <choose>
           <if type="webpage" match="any">
