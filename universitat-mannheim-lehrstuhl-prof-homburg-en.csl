@@ -19,13 +19,15 @@
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en-US">
-    <term name="ordinal">&lt;sup&gt;th&lt;/sup&gt;</term>
-    <term name="ordinal-01">&lt;sup&gt;st&lt;/sup&gt;</term>
-    <term name="ordinal-02">&lt;sup&gt;nd&lt;/sup&gt;</term>
-    <term name="ordinal-03">&lt;sup&gt;th&lt;/sup&gt;</term>
-    <term name="ordinal-11">&lt;sup&gt;th&lt;/sup&gt;</term>
-    <term name="ordinal-12">&lt;sup&gt;th&lt;/sup&gt;</term>
-    <term name="ordinal-13">&lt;sup&gt;th&lt;/sup&gt;</term>
+    <terms>
+      <term name="ordinal">&lt;sup&gt;th&lt;/sup&gt;</term>
+      <term name="ordinal-01">&lt;sup&gt;st&lt;/sup&gt;</term>
+      <term name="ordinal-02">&lt;sup&gt;nd&lt;/sup&gt;</term>
+      <term name="ordinal-03">&lt;sup&gt;th&lt;/sup&gt;</term>
+      <term name="ordinal-11">&lt;sup&gt;th&lt;/sup&gt;</term>
+      <term name="ordinal-12">&lt;sup&gt;th&lt;/sup&gt;</term>
+      <term name="ordinal-13">&lt;sup&gt;th&lt;/sup&gt;</term>
+    </terms>
   </locale>
   <macro name="editor">
     <names variable="editor">
