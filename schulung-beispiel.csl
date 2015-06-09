@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never">
+<!-- This style was edited with the Visual CSL Editor (http://editor.citationstyles.org/visualEditor/) -->
+  <info>
+    <title>Schulung Beispiel</title>
+    <id>http://www.zotero.org/styles/schulung-beispiel</id>
+    <link href="http://www.zotero.org/styles/schulung-beispiel" rel="self"/>
+    <author>
+      <name>Philipp Zumstein</name>
+    </author>
+    <category citation-format="author-date"/>
+    <summary>Dieser rudimentäre Zitationsstil soll als Beispiel in Schulung genutzt werden und behandelt insbesondere Zeitschriftenartikel.</summary>
+    <updated>2015-06-08T16:31:58+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <citation et-al-min="4" et-al-use-first="1">
+    <layout delimiter="; " prefix="(" suffix=")">
+      <group delimiter=" ">
+        <names variable="author"/>
+        <date date-parts="year" form="text" variable="issued"/>
+      </group>
+    </layout>
+  </citation>
+  <bibliography et-al-min="4" et-al-use-first="1">
+    <sort>
+      <key variable="author"/>
+    </sort>
+    <layout>
+      <group delimiter=". " suffix=".">
+        <names variable="author"/>
+        <date date-parts="year" form="text" variable="issued"/>
+        <text variable="title"/>
+        <text variable="container-title"/>
+        <text variable="volume"/>
+        <text variable="issue"/>
+        <text variable="page"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
