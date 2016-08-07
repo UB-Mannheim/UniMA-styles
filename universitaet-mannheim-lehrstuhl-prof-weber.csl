@@ -3,8 +3,8 @@
 <!-- This style was edited with the Visual CSL Editor (http://editor.citationstyles.org/visualEditor/) -->
   <info>
     <title>Universität Mannheim - Lehrstuhl Prof. Weber</title>
-    <id>http://www.zotero.org/styles/universität-mannheim-lehrstuhl-prof-weber</id>
-    <link href="http://www.zotero.org/styles/universität-mannheim-lehrstuhl-prof-weber" rel="self"/>
+    <id>http://www.zotero.org/styles/universitat-mannheim-lehrstuhl-prof-weber</id>
+    <link href="http://www.zotero.org/styles/universitat-mannheim-lehrstuhl-prof-weber" rel="self"/>
     <link href="http://www.zotero.org/styles/universitat-mannheim-lehrstuhl-prof-helmig" rel="template"/>
     <link href="http://weber.bwl.uni-mannheim.de/fileadmin/files/weber/files/secret/Masterarbeiten/Wissenschaft_Arbeiten_September_2015_deutsch_neu.pdf" rel="documentation"/>
     <link href="http://weber.bwl.uni-mannheim.de/fileadmin/files/weber/files/secret/Masterarbeiten/Wissenschaft_Arbeiten_September_2015_english_neu-1.pdf" rel="documentation"/>
@@ -13,11 +13,11 @@
       <name>Philipp Zumstein</name>
       <uri>https://github.com/zuphilip</uri>
     </author>
-    <category citation-format="note"/>
+    <category citation-format="author-date"/>
     <category field="communications"/>
     <category field="social_science"/>
     <summary>Zitierstil orientiert sich am Leitfaden zur Anfertigung von Seminar-, Diplom- und Masterarbeiten (Stand September 2015) von Prof. Weber, BWL, Universität Mannheim (der neue Leitfaden ist passwortgeschützt und nicht frei zugänglich im Netz). Die Implemantation ist sprachunabhängig, so dass der gleiche Stil für Deutsch und Englisch gebraucht werden kann.</summary>
-    <updated>2016-07-30T12:40:42+00:00</updated>
+    <updated>2016-07-30T12:54:54+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="de-DE">
