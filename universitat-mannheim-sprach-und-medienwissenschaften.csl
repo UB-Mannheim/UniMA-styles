@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<style class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="de-DE" xmlns="http://purl.org/net/xbiblio/csl">
+  <!-- This style was edited with the Visual CSL Editor (http://editor.citationstyles.org/visualEditor/) -->
+  <info>
+    <title>Universität Mannheim, Sprach- und Medienwissenschaften (German)</title>
+    <title-short>SMW Uni Mannheim</title-short>
+    <id>http://www.zotero.org/styles/universitat-mannheim-sprach-und-medienwissenschaften</id>
+    <link href="http://www.zotero.org/styles/universitat-mannheim-sprach-und-medienwissenschaften" rel="self"/>
+    <link href="http://www.zotero.org/styles/universitat-mannheim-literatur-und-medienwissenschaften" rel="template"/>
+    <link href="http://romanistik.uni-mannheim.de/studium/formatrichtlinien_des_romanischen_seminars_abteilungsuebergreifend/formatrichtlinien_2014_05_22/formatrichtlinien_romanisches_seminar_stand_mai_2014.pdf" rel="documentation"/>
+    <author>
+      <name>Philipp Zumstein</name>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="humanities"/>
+    <category field="literature"/>
+    <updated>2017-12-21T13:22:09+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale xml:lang="de">
+    <terms>
+      <term name="editor" form="verb-short">hrsgg. von</term>
+      <term name="et-al">et al.</term>
+    </terms>
+  </locale>
+  <macro name="author">
+    <names variable="author">
+      <name delimiter="/" delimiter-precedes-last="always" name-as-sort-order="all"/>
+      <substitute>
+        <text macro="editor"/>
+        <text variable="title" font-style="italic"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="container-title">
+    <group delimiter=": ">
+      <text term="in" text-case="capitalize-first"/>
+      <text macro="editor"/>
+      <text variable="container-title" font-style="italic"/>
+    </group>
+  </macro>
+  <macro name="editor">
+    <names variable="editor">
+      <name delimiter="/" name-as-sort-order="all"/>
+      <label form="short" prefix=" (" suffix=")"/>
+    </names>
+  </macro>
+  <macro name="volume-for-books">
+    <choose>
+      <if variable="volume">
+        <group delimiter=" ">
+          <text term="volume" form="short" text-case="capitalize-first"/>
+          <number text-case="capitalize-first" variable="volume"/>
+        </group>
+      </if>
+      <else>
+        <group>
+          <number variable="number-of-volumes" form="numeric"/>
+          <text term="volume" form="short" prefix=" " plural="true"/>
+        </group>
+      </else>
+    </choose>
+  </macro>
+  <macro name="author-short">
+    <names variable="author" delimiter=", ">
+      <name form="short" delimiter="/"/>
+      <substitute>
+        <names variable="editor">
+          <name form="short" delimiter="/"/>
+        </names>
+        <text variable="title" font-style="italic"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="serie-with-number">
+    <group delimiter="; ">
+      <text variable="collection-title" font-style="italic"/>
+      <text variable="collection-number"/>
+    </group>
+  </macro>
+  <macro name="url-with-date">
+    <group delimiter=" ">
+      <text variable="URL"/>
+      <date form="numeric" variable="accessed" prefix="(" suffix=")"/>
+    </group>
+  </macro>
+  <macro name="year-edition">
+    <group prefix="(" suffix=")">
+      <choose>
+        <if match="any" is-numeric="edition">
+          <text variable="edition" vertical-align="sup"/>
+        </if>
+      </choose>
+      <date date-parts="year" form="text" variable="original-date" prefix="[" suffix="]"/>
+      <text macro="year"/>
+    </group>
+  </macro>
+  <macro name="year">
+    <choose>
+      <if match="any" variable="issued">
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+      </if>
+      <else>
+        <text term="no date" form="short"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="pages">
+    <group delimiter=" " prefix=" ">
+      <text term="page" form="short"/>
+      <text variable="page"/>
+    </group>
+  </macro>
+  <macro name="editor-encyclopedia">
+    <group delimiter=" ">
+      <text term="editor" form="verb-short"/>
+      <names variable="editor">
+        <name delimiter="/"/>
+      </names>
+    </group>
+  </macro>
+  <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true">
+    <layout delimiter="; " prefix="(" suffix=")">
+      <group delimiter=": ">
+        <choose>
+          <if match="any" position="ibid">
+            <text term="ibid" form="short"/>
+          </if>
+          <else-if type="entry-encyclopedia entry-dictionary" match="any">
+            <group delimiter=" ">
+              <text variable="container-title"/>
+              <text macro="year"/>
+            </group>
+          </else-if>
+          <else>
+            <group delimiter=" ">
+              <text macro="author-short"/>
+              <text macro="year"/>
+              <date date-parts="year" form="text" variable="original-date" prefix="[" suffix="]"/>
+            </group>
+          </else>
+        </choose>
+        <choose>
+          <if type="entry-encyclopedia entry-dictionary" match="any">
+            <text variable="title" font-style="italic"/>
+          </if>
+          <else>
+            <text variable="locator"/>
+          </else>
+        </choose>
+      </group>
+    </layout>
+  </citation>
+  <bibliography subsequent-author-substitute="———" entry-spacing="0" hanging-indent="true">
+    <sort>
+      <key macro="author"/>
+      <key variable="issued"/>
+    </sort>
+    <layout suffix=".">
+      <group delimiter=": ">
+        <group delimiter=" ">
+          <choose>
+            <if type="entry-encyclopedia entry-dictionary" match="any">
+              <text variable="container-title" font-style="italic"/>
+            </if>
+            <else>
+              <text macro="author"/>
+            </else>
+          </choose>
+          <text macro="year-edition"/>
+        </group>
+        <group delimiter=". ">
+          <choose>
+            <if type="book" match="any">
+              <text variable="title" font-style="italic"/>
+            </if>
+            <else-if match="none" type="entry-encyclopedia entry-dictionary">
+              <text macro="editor-encyclopedia"/>
+            </else-if>
+            <else-if type="article article-journal article-magazine article-newspaper" match="any">
+              <text variable="title" quotes="true" font-style="normal"/>
+              <group delimiter=" ">
+                <text macro="container-title"/>
+                <group delimiter=",">
+                  <text variable="volume" prefix=" "/>
+                  <text variable="issue"/>
+                  <text macro="pages"/>
+                </group>
+              </group>
+            </else-if>
+            <else>
+              <text variable="title" quotes="true"/>
+              <group delimiter=": ">
+                <text macro="container-title" font-style="normal"/>
+              </group>
+            </else>
+          </choose>
+          <choose>
+            <if type="article article-journal article-magazine article-newspaper" match="any"/>
+            <else>
+              <text macro="volume-for-books"/>
+              <group delimiter=", ">
+                <group delimiter=" ">
+                  <group delimiter=": ">
+                    <text variable="publisher-place"/>
+                    <text variable="publisher"/>
+                  </group>
+                  <text macro="serie-with-number" prefix="(" suffix=")"/>
+                </group>
+                <text macro="pages"/>
+              </group>
+            </else>
+          </choose>
+          <text variable="locator"/>
+          <text macro="url-with-date"/>
+        </group>
+      </group>
+    </layout>
+  </bibliography>
+</style>
