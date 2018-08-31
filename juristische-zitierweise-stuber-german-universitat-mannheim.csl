@@ -13,7 +13,7 @@
     <category citation-format="note"/>
     <category field="law"/>
     <summary>Angepasster juristischer Stil für die Uni Mannheim, aufbauend auf Juristische Zitierweise nach Stüber</summary>
-    <updated>2018-08-31T10:35:04+00:00</updated>
+    <updated>2018-08-31T12:44:57+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="de-DE">
@@ -23,7 +23,7 @@
   </locale>
   <macro name="author">
     <names variable="author" font-style="italic">
-      <name delimiter="/ " name-as-sort-order="all" sort-separator=", " form="long"/>
+      <name delimiter=" / " name-as-sort-order="all"/>
       <label form="short" prefix=" (" suffix=")"/>
       <substitute>
         <names variable="editor"/>
@@ -95,15 +95,20 @@
     </choose>
   </macro>
   <macro name="volume">
+    <group delimiter=" " suffix=", ">
+      <text term="volume" form="short"/>
+      <text variable="volume"/>
+    </group>
+  </macro>
+  <macro name="author-editor-sort">
     <choose>
-      <if match="any" is-numeric="volume">
-        <group delimiter=" " suffix=", ">
-          <text term="volume" form="short"/>
-          <text variable="volume"/>
-        </group>
+      <if type="entry-encyclopedia" match="any">
+        <names variable="editor">
+          <name delimiter=" / "/>
+        </names>
       </if>
       <else>
-        <text variable="volume"/>
+        <text macro="author"/>
       </else>
     </choose>
   </macro>
@@ -202,10 +207,10 @@
   </citation>
   <bibliography>
     <sort>
-      <key macro="author"/>
+      <key macro="author-editor-sort"/>
       <key variable="issued"/>
     </sort>
-    <layout suffix=".">
+    <layout>
       <choose>
         <if type="article-journal">
           <group delimiter=", ">
@@ -233,6 +238,7 @@
           <group delimiter=", ">
             <text macro="author"/>
             <text variable="title"/>
+            <text macro="volume"/>
             <text macro="edition"/>
             <group delimiter=" ">
               <text variable="publisher-place" suffix=" "/>
@@ -248,10 +254,11 @@
               <text term="in"/>
               <group delimiter=", ">
                 <names variable="editor" font-style="italic">
-                  <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="long"/>
+                  <name delimiter=" / " name-as-sort-order="all"/>
                   <label form="short" prefix=" (" suffix=")"/>
                 </names>
                 <text variable="container-title"/>
+                <text macro="volume"/>
               </group>
             </group>
             <text variable="edition"/>
@@ -274,21 +281,23 @@
           </group>
         </else-if>
         <else-if type="entry-encyclopedia">
-          <names variable="editor" font-style="italic" delimiter="/">
-            <name delimiter="/ " name-as-sort-order="all"/>
+          <names variable="editor" font-style="italic" delimiter=" / ">
+            <name delimiter=" / " name-as-sort-order="all"/>
             <label form="short" prefix=" (" suffix=")"/>
           </names>
           <text variable="container-title" prefix=", " suffix=", "/>
           <text macro="volume"/>
-          <group delimiter=" ">
+          <group delimiter=", ">
             <text macro="edition"/>
-            <text variable="publisher-place"/>
-            <date variable="issued">
-              <date-part name="year" form="long"/>
-            </date>
-            <group delimiter=", " prefix="(zitiert: " suffix=")">
-              <text value="Bearbeiter" font-style="italic"/>
-              <text macro="in-commentary"/>
+            <group delimiter=" ">
+              <text variable="publisher-place"/>
+              <date variable="issued">
+                <date-part name="year" form="long"/>
+              </date>
+              <group delimiter=", " prefix="(zitiert: " suffix=")">
+                <text value="Bearbeiter" font-style="italic"/>
+                <text macro="in-commentary"/>
+              </group>
             </group>
           </group>
         </else-if>
