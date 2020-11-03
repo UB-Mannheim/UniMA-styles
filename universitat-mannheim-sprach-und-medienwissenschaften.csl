@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <style class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="de-DE" xmlns="http://purl.org/net/xbiblio/csl">
-  <!-- This style was edited with the Visual CSL Editor (http://editor.citationstyles.org/visualEditor/) -->
+  <!-- This style was edited with the Visual CSL Editor (https://editor.citationstyles.org/visualEditor/) -->
   <info>
     <title>Universität Mannheim, Sprach- und Medienwissenschaften (German)</title>
     <title-short>SMW Uni Mannheim</title-short>
     <id>http://www.zotero.org/styles/universitat-mannheim-sprach-und-medienwissenschaften</id>
     <link href="http://www.zotero.org/styles/universitat-mannheim-sprach-und-medienwissenschaften" rel="self"/>
     <link href="http://www.zotero.org/styles/universitat-mannheim-literatur-und-medienwissenschaften" rel="template"/>
-    <link href="http://romanistik.uni-mannheim.de/studium/formatrichtlinien_des_romanischen_seminars_abteilungsuebergreifend/formatrichtlinien_2014_05_22/formatrichtlinien_romanisches_seminar_stand_mai_2014.pdf" rel="documentation"/>
+    <link href="https://www.phil.uni-mannheim.de/media/Lehrstuehle/phil/romanistik/DOKUMENTE/formatrichtlinien_romsem17.pdf" rel="documentation"/>
     <author>
       <name>Philipp Zumstein</name>
     </author>
     <category citation-format="author-date"/>
     <category field="humanities"/>
     <category field="literature"/>
-    <updated>2020-08-13T22:24:50+00:00</updated>
+    <updated>2020-11-03T16:13:26+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="de">
@@ -125,14 +125,19 @@
     <layout delimiter="; " prefix="(" suffix=")">
       <group delimiter=": ">
         <choose>
-          <if match="any" position="ibid">
+          <if match="any" position="ibid-with-locator">
             <text term="ibid" form="short"/>
+            <text variable="locator"/>
           </if>
+          <else-if match="any" position="ibid">
+            <text term="ibid" form="short"/>
+          </else-if>
           <else-if type="entry-encyclopedia entry-dictionary" match="any">
             <group delimiter=" ">
               <text variable="container-title"/>
               <text macro="year"/>
             </group>
+            <text variable="title" font-style="italic"/>
           </else-if>
           <else>
             <group delimiter=" ">
@@ -140,13 +145,6 @@
               <text macro="year"/>
               <date date-parts="year" form="text" variable="original-date" prefix="[" suffix="]"/>
             </group>
-          </else>
-        </choose>
-        <choose>
-          <if type="entry-encyclopedia entry-dictionary" match="any">
-            <text variable="title" font-style="italic"/>
-          </if>
-          <else>
             <text variable="locator"/>
           </else>
         </choose>
