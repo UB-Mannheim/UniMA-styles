@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" demote-non-dropping-particle="sort-only" default-locale="de-DE">
-  <!-- This style was edited with the Visual CSL Editor (http://editor.citationstyles.org/visualEditor/) -->
+  <!-- This style was edited with the Visual CSL Editor (https://editor.citationstyles.org/visualEditor/) -->
   <info>
     <title>Universität Mannheim, Literatur- und Medienwissenschaften (German)</title>
     <title-short>LMW Uni Mannheim</title-short>
     <id>http://www.zotero.org/styles/universitat-mannheim-literatur-und-medienwissenschaften</id>
     <link href="http://www.zotero.org/styles/universitat-mannheim-literatur-und-medienwissenschaften" rel="self"/>
     <link href="http://www.zotero.org/styles/zeitschrift-fur-deutsche-philologie" rel="template"/>
-    <link href="http://romanistik.uni-mannheim.de/studium/formatrichtlinien_des_romanischen_seminars_abteilungsuebergreifend/formatrichtlinien_2014_05_22/formatrichtlinien_romanisches_seminar_stand_mai_2014.pdf" rel="documentation"/>
+    <link href="https://www.phil.uni-mannheim.de/media/Lehrstuehle/phil/romanistik/DOKUMENTE/formatrichtlinien_romsem17.pdf" rel="documentation"/>
     <author>
       <name>Philipp Zumstein</name>
     </author>
     <category citation-format="note"/>
     <category field="humanities"/>
     <category field="literature"/>
-    <updated>2017-12-19T11:54:00+00:00</updated>
+    <updated>2020-12-13T14:27:11+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="de">
@@ -25,6 +25,14 @@
   <macro name="author">
     <names variable="author">
       <name delimiter="/" delimiter-precedes-last="always"/>
+      <substitute>
+        <text macro="editor"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="author-sort">
+    <names variable="author">
+      <name delimiter="/" delimiter-precedes-last="always" name-as-sort-order="all"/>
       <substitute>
         <text macro="editor"/>
       </substitute>
@@ -186,12 +194,12 @@
   </citation>
   <bibliography subsequent-author-substitute="———" entry-spacing="0" hanging-indent="true">
     <sort>
-      <key macro="author"/>
+      <key macro="author-sort"/>
       <key variable="issued"/>
     </sort>
     <layout suffix=".">
       <group delimiter=": ">
-        <text macro="author"/>
+        <text macro="author-sort"/>
         <group delimiter=", ">
           <choose>
             <if type="book" match="any">
