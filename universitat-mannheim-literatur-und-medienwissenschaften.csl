@@ -14,7 +14,7 @@
     <category citation-format="note"/>
     <category field="humanities"/>
     <category field="literature"/>
-    <updated>2021-02-20T11:20:44+00:00</updated>
+    <updated>2021-02-24T13:21:01+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="de">
@@ -108,7 +108,7 @@
                   <text value="loc. cit."/>
                 </if>
                 <else>
-                  <text value="op cit."/>
+                  <text value="op. cit."/>
                 </else>
               </choose>
             </group>
@@ -222,7 +222,7 @@
             <else-if type="article article-journal article-magazine article-newspaper" match="any">
               <text variable="title" quotes="true" font-style="normal"/>
               <group delimiter=" ">
-                <text macro="container-title"/>
+              <text macro="container-title"/>
                 <group delimiter=" ">
                   <text variable="volume" prefix=" "/>
                   <date variable="issued" prefix="(" suffix=")">
